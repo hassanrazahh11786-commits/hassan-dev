@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<title>Hassan Dev</title>
+
+<style>
+
+/*  BLACK + GOLD + PURPLE THEME */
+body{
+    background:#000;
+    padding-top: 80px;
+    scroll-behavior: smooth;
+}
+
+
+/* Navbar */
+.custom-navbar {
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,215,0,0.2);
+    box-shadow: 0 0 20px rgba(255,215,0,0.1);
+    padding: 12px 0;
+}
+
+/* Logo */
+.navbar-brand {
+    font-size: 22px;
+    color: gold !important;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    color: gold;
+    font-size: 26px;
+}
+
+/* Nav Links */
+.nav-link {
+    color: #ccc !important;
+    font-size: 17px;
+    margin: 0 10px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Hover Glow */
+.nav-link:hover {
+    color: gold !important;
+    text-shadow: 0 0 8px gold;
+}
+
+/* Underline Animation */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, gold, purple);
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Button (cotact) */
+.btn-custom {
+    border: 1px solid gold;
+    color: gold;
+    background: transparent;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(45deg, gold, rgb(221, 221, 7));
+    color: #0b0b0a;
+    box-shadow: 0 0 10px gold;
+    text-align: center; 
+}
+
+
+/* Toggle button color fix */
+.navbar-toggler {
+    border-color: gold;
+
+}
+
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='gold' viewBox='0 0 30 30'%3e%3cpath stroke='gold' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+      /* header */
+
+      /* HERO SECTION */
+.hero-section{
+    padding: 100px 0;
+    background: linear-gradient(135deg, #000, #0d0d0d); ;
+}
+
+/* Gold Text */
+.text-gold{
+    color: gold;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, gold, rgb(225, 9, 225));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Image Glow */
+.hero-img{
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,215,0,0.2);
+    transition: 0.4s;
+}
+
+.hero-img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px gold;
+}
+       /* about section  */
+       /* ABOUT */
+.about-section{
+    padding: 80px 0;
+    background: #000;
+}
+
+/* Image */
+.about-img{
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,215,0,0.2);
+    transition: 0.4s;
+}
+
+.about-img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px gold;
+}
+
+/* Skills */
+.skill-bar{
+    height: 8px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-fill{
+    height: 100%;
+    background: linear-gradient(90deg, gold, purple);
+    border-radius: 10px;
+}
+
+/* SERVICES */
+.services-section{
+    padding: 80px 0;
+    background: #050505;
+}
+
+/* Title */
+.section-title{
+    color: gold;
+    font-weight: bold;
+    position: relative;
+}
+
+.section-title::after{
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, gold, purple);
+    display: block;
+    margin: 10px auto;
+}
+
+/* Cards */
+.service-card{
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,215,0,0.2);
+    transition: 0.4s;
+    color: #ccc;
+}
+
+/* Hover Glow */
+.service-card:hover{
+    transform: translateY(-10px);
+    border: 1px solid gold;
+    box-shadow: 0 0 25px rgba(255,215,0,0.3);
+}
+
+/* Icon */
+.service-icon{
+    font-size: 40px;
+    color: gold;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.service-card:hover .service-icon{
+    transform: scale(1.2);
+    text-shadow: 0 0 10px gold;
+} 
+     /* our project  */
+     /* PROJECTS */
+.projects-section{
+    padding: 80px 0;
+    background: #050505;
+}
+
+/* Card */
+.project-card{
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,215,0,0.2);
+    transition: 0.4s;
+}
+
+/* Image */
+.project-card img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+/* Content */
+.project-content{
+    padding: 20px;
+    color: #ccc;
+}
+
+/* Hover Effect */
+.project-card:hover{
+    transform: translateY(-10px);
+    border: 1px solid gold;
+    box-shadow: 0 0 30px rgba(255,215,0,0.3);
+}
+
+.project-card:hover img{
+    transform: scale(1.1);
+}
+   /* our team  */
+   /* TEAM */
+.team-section{
+    padding: 80px 0;
+    background: #000;
+}
+
+/* Card */
+.team-card{
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,215,0,0.2);
+    transition: 0.4s;
+    color: #ccc;
+}
+
+/* Image */
+.team-card img{
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid gold;
+}
+
+/* Hover */
+.team-card:hover{
+    transform: translateY(-10px);
+    border: 1px solid gold;
+    box-shadow: 0 0 30px rgba(255,215,0,0.3);
+}
+
+/* Social Icons */
+.social-icons i{
+    margin: 5px;
+    color: gold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover{
+    color: purple;
+    transform: scale(1.2);
+}
+     /* contract form  */
+     /* CONTACT */
+.contact-section{
+    padding: 80px 0;
+    background: #050505;
+}
+
+/* Form Box */
+.contact-form{
+    background: #0d0d0d;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(231, 209, 81, 0.2);
+}
+
+/* Inputs */
+.form-control{
+    background: #000;
+    border: 1px solid #768120;
+    color: #fff;
+}
+.form-control::placeholder{
+    color: #413333;
+    opacity: 1;
+}
+
+.form-control:focus{
+    border-color: gold;
+    box-shadow: 0 0 10px gold;
+    background: #000;
+    color: #fff;
+} 
+      /* footer  */
+      /* FOOTER */
+.footer-section{
+    background: #000;
+    padding: 60px 0 20px;
+    border-top: 1px solid rgba(255,215,0,0.2);
+}
+
+/* Links */
+.footer-links{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li{
+    margin: 8px 0;
+}
+
+.footer-links a{
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover{
+    color: gold;
+    text-shadow: 0 0 8px gold;
+}
+
+/* Social Icons */
+.footer-social i{
+    font-size: 20px;
+    margin: 10px;
+    color: gold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-social i:hover{
+    color: purple;
+    transform: scale(1.2);
+}
+
+/* Bottom */
+.footer-bottom{
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    color: #aaa;
+}    
+  
+          
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="d-flex align-items-center">
+        <i class="bi bi-lightning me-2 logo-icon"></i>
+        <a class="navbar-brand fw-bold" href="#">Hassan Dev </a>
+        
+    </div>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Me</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#service">My Services</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="#project">My Projects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#team">My Team</a>
+        </li>
+ 
+        <li class="nav-item align-items-center">
+           <a href="#contact" class="btn btn-custom ms-3 text-center ">Contact</a> </li>
+
+      </ul>
+
+    
+    </div>
+  </div>
+</nav>
+        <!-- header -->
+         <!-- HERO SECTION -->
+<section class="hero-section" id="home" >
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT TEXT -->
+            <div class="col-lg-6 text-white">
+                <h5 class="text-gold">Hello, I'm</h5>
+
+                <h1 class="display-4 fw-bold">
+                    Hassan Raza <br>
+                    <span class="gradient-text">Web Developer</span>
+                </h1>
+
+                <p class="mt-3 text-light">
+                    I create modern, responsive and high-quality websites.
+                    Grow your business with powerful digital solutions.
+                </p>
+
+                <div class="mt-4">  
+
+                 <a href="#contact" class="btn btn-custom ms-3 text-center ">Hire Me</a> </li>
+                 <a href="#project" class="btn  ms-3 text-center btn-outline-light ">View Work</a> </li>
+
+
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <img src="3.jpeg"
+                     class="img-fluid hero-img">
+            </div>
+
+        </div>
+    </div>
+</section>
+       <!-- about sectio -->
+         <section class="about-section" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- IMAGE -->
+            <div class="col-lg-6 mb-2 mb-lg-0 text-center">
+                <img src="2.jpeg"
+                     class="img-fluid about-img">
+            </div>
+
+            <!-- TEXT -->
+            <div class="col-lg-6 text-white">
+                <h2 class="section-title text-start text-center">About Me</h2>
+
+                <h4 class="mb-3 text-gold">Hassan Raza</h4>
+
+                <p class="text-light">
+                    I am a professional web developer with strong skills in creating modern,
+                    responsive and user-friendly websites. I help businesses grow online
+                    with powerful and creative digital solutions.
+                </p>
+
+
+                <!-- SKILLS -->
+                <div class="skills mt-4">
+
+                    <p>HTML / CSS</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 95%;"></div>
+                    </div>
+
+                    <p class="mt-1">Bootstrap / Tailwind</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%;"></div>
+                    </div>
+
+                     <p class="mt-1">JavaScript</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 80%;"></div>
+                    </div>
+
+
+                     <p class="mt-1">PHP</p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%;"></div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+     <!-- our service  -->
+         <section class="services-section" id="service">
+    <div class="container text-center">
+
+        <h2 class="section-title mb-5">My Services</h2>
+
+        <!-- ROW 1 -->
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="bi bi-laptop service-icon"></i>
+                    <h4>Website Design</h4>
+                    <p>Modern and creative website designs that attract users and boost engagement.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="bi bi-code-slash service-icon"></i>
+                    <h4>Web Development</h4>
+                    <p>Fully responsive and fast websites using latest technologies.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="bi bi-phone service-icon"></i>
+                    <h4>Responsive Design</h4>
+                    <p>Mobile-friendly designs that work perfectly on all devices.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="bi bi-graph-up-arrow service-icon"></i>
+                    <h4>SEO Optimization</h4>
+                    <p>Rank your website higher on Google and get organic traffic.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="bi bi-display service-icon"></i>
+                    <h4>Frontend Development</h4>
+                    <p>Interactive and modern UI using HTML, CSS, Bootstrap & JS.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <i class="bi bi-palette service-icon"></i>
+                    <h4>Graphic Design</h4>
+                    <p>Creative logos, ads, and branding materials for your business.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+       <!-- our project  -->
+       <section class="projects-section" id="project">
+    <div class="container text-center">
+
+        <h2 class="section-title mb-5">My Projects</h2>
+
+        <div class="row">
+
+            <!-- Project 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="project-card">
+                    <img src="https://media.istockphoto.com/id/2237841978/photo/black-friday-online-shopping-with-mini-bags-and-cart.webp?a=1&b=1&s=612x612&w=0&k=20&c=xShoBogYjsGekXYs03nWgUzMnNsjKiWw0T6fxgTM4-A=" class="img-fluid">
+                    <div class="project-content">
+                        <h5>Ecommerce Website</h5>
+                        <p>Online store with modern UI design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid">
+                    <div class="project-content">
+                        <h5>Dashboard UI</h5>
+                        <p>Admin dashboard with charts and analytics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVuJTIwaW4lMjBmcm9udCUyMG9mJTIwY29kaW5nfGVufDB8fDB8fHww" class="img-fluid">
+                    <div class="project-content">
+                        <h5>Portfolio Website</h5>
+                        <p>Personal portfolio with modern animations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFzaGJvYXJkfGVufDB8fDB8fHww" class="img-fluid">
+                    <div class="project-content">
+                        <h5>Business Website</h5>
+                        <p>Professional website for business growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="project-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid">
+                    <div class="project-content">
+                        <h5>Landing Page</h5>
+                        <p>High-converting landing page design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dWl8ZW58MHx8MHx8fDA%3D" class="img-fluid">
+                    <div class="project-content">
+                        <h5>Web App UI</h5>
+                        <p>Modern web application interface design.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+      <!-- our team  -->
+       <section class="team-section" id="team">
+    <div class="container text-center">
+
+        <h2 class="section-title mb-5">My Team</h2>
+
+        <div class="row">
+
+            <!-- Member 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1739047599736-4e1699c7df56?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid">
+                    <h5>Saim Ali</h5>
+                    <p>Frontend Developer</p>
+
+                    <div class="social-icons">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="col-md-3 mb-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid">
+                    <h5>Sara Malik</h5>
+                    <p>UI/UX Designer</p>
+
+                    <div class="social-icons">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="col-md-3 mb-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGVyc29ufGVufDB8fDB8fHww" class="img-fluid">
+                    <h5>Hafsa Ali</h5>
+                    <p>Backend Developer</p>
+
+                    <div class="social-icons">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="col-md-3 mb-4">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1633405044931-d59ce835743f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWVuJTIwcGljfGVufDB8fDB8fHww" class="img-fluid">
+                    <h5>Ali Mehmood</h5>
+                    <p>SEO Expert</p>
+
+                    <div class="social-icons">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+           <!-- contract form  -->
+            <section class="contact-section" id="contact">
+    <div class="container">
+
+        <h2 class="section-title text-center mb-5">Contact Me</h2>
+
+        <div class="row">
+
+            <!-- LEFT INFO -->
+            <div class="col-lg-5 text-white mb-4">
+
+                <h4 class="text-gold mb-3">Get In Touch</h4>
+
+                <p class="text-light">
+                    Have a project in mind? Let’s work together and build something amazing.
+                </p>
+
+                <p><i class="bi bi-envelope-fill text-gold me-2"></i> hassanrazamughal3839@gmail.com</p>
+                <p><i class="bi bi-phone-fill text-gold me-2"></i> +92 300 1403936</p>
+                <p><i class="bi bi-geo-alt-fill text-gold me-2"></i> Pakistan</p>
+
+            </div>
+
+            <!-- RIGHT FORM -->
+            <div class="col-lg-7">
+                <form action="contacts.php" method="POST">
+
+    <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+
+    <input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
+
+    <input type="text" name="subject" class="form-control mb-3" placeholder="Subject" required>
+
+    <textarea name="message" class="form-control mb-3" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn btn-custom w-100">
+        Send Message
+    </button>
+
+</form>
+            </div>
+
+        </div>
+
+    </div>
+</section> 
+                     <!-- footer -->
+        <footer class="footer-section">
+    <div class="container">
+
+        <div class="row text-center text-md-start">
+
+            <!-- About -->
+            <div class="col-md-4 mb-4">
+                <h4 class="text-gold">Hassan Dev</h4>
+                <p class="text-light">
+                    Professional web developer creating modern and responsive websites
+                    to grow your business online.
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-gold">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-gold">Follow Me</h5>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61589520007202" target="_blank">
+                            <i class="bi bi-facebook"></i></a>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-linkedin"></i>
+                   <a href="https://wa.me/923001403936" target="_blank">
+                          <i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom text-center mt-4">
+            <p>© 2026 Hassan Dev | All Rights Reserved</p>
+        </div>
+
+    </div>
+</footer>
+           
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
